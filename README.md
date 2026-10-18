@@ -20,25 +20,25 @@
 본선 개발은 **7단계(W1~W7)** 로 나뉩니다.
 
 ```
-기존 본선 개발   ■ ■ ■ ■ □ □ □   7단계 중 4단계 완료 (W1~W4)
-1·2차 반영 보완  ◧ ◧ ◧ ◧ ◧ ◧ □   W1~W6 개발본 작성, 리뷰·병합 중
+기존 본선 개발   ◧ ◧ ◧ ◧ □ □ □   W1~W4 구현·QA 기록 있음, 단계 완료 미확인
+1·2차 반영 보완  ◧ ◧ ◧ ◧ ◧ ◧ □   팀 제공 설명: W1~W6 개발본, 원본 확인 불가
 ```
 
-■ 완료(단계 브랜치에 병합 + 검사 기록) · ◧ 개발본 있음(리뷰·병합 대기) · □ 시작 전
+◧ 구현·검사 기록 또는 개발본 있음(전체 수용·승격 완료와 구분) · □ 이 사본에 완료 근거 없음
 
-| 단계 | 목표 | 기존 본선 개발 | 1·2차 멘토링 반영 보완(V5) |
+| 단계 | 목표 | 기존 본선 개발 | 1·2차 멘토링 반영 보완(V5, 팀 제공·검증 불가) |
 | --- | --- | --- | --- |
-| W1 | 기반·계약·전환 기준 | ✅ 완료 — 인증·기관 신청 API, Registry 경계, 두 유형 모델, 합성 QA ([`phase/W1`](../../tree/phase/W1)) | 🔄 독립 QA 병합, 계약 검토·재사용 기준 리뷰 중 |
-| W2 | 기관 확인·공동승인·키 | ✅ 완료 — 기관·키 API, Operation 복구, RPC 장애·재시작 QA ([`phase/W2`](../../tree/phase/W2)) | 🔄 2-of-3 공동승인·키 보유 증명·긴급 정지 리뷰 중 |
-| W3 | 기관 서명·발행·검증 | ✅ 완료 — 두 유형 발행·조회·검증, 공식 웹 디자인 연결, 실제 API·브라우저 QA ([`phase/W3`](../../tree/phase/W3)) | 🔄 기관 지갑 EIP-712 발행·직접 거래 대조 리뷰 중 |
-| W4 | 버전·철회·사고 대응 | ✅ 완료 — 키 교체, Proof 폐기·상태·1회 사용, 수명주기 QA ([`phase/W4`](../../tree/phase/W4)) | 🔄 문서 버전·원자적 대체·철회·키 이력 리뷰 중 |
+| W1 | 기반·계약·전환 기준 | ◧ 구현·QA 기록 — 인증·기관 신청 API, Registry 경계, 두 유형 모델, 합성 QA ([`phase/W1`](../../tree/phase/W1)) | 🔄 독립 QA 병합, 계약 검토·재사용 기준 리뷰 중 |
+| W2 | 기관 확인·공동승인·키 | ◧ 구현·QA 기록 — 기관·키 API, Operation 복구, RPC 장애·재시작 QA ([`phase/W2`](../../tree/phase/W2)) | 🔄 2-of-3 공동승인·키 보유 증명·긴급 정지 리뷰 중 |
+| W3 | 기관 서명·발행·검증 | ◧ 구현·QA 기록 — 두 유형 발행·조회·검증, 공식 웹 디자인 연결, 실제 API·브라우저 QA ([`phase/W3`](../../tree/phase/W3)) | 🔄 기관 지갑 EIP-712 발행·직접 거래 대조 리뷰 중 |
+| W4 | 버전·철회·사고 대응 | ◧ 구현·QA 기록 — 키 교체, Proof 폐기·상태·1회 사용, 수명주기 QA ([`phase/W4`](../../tree/phase/W4)) | 🔄 문서 버전·원자적 대체·철회·키 이력 리뷰 중 |
 | W5 | 분석·통합 UX·저장 | ◧ 개발본 있음 — 화면·접근성·API 보안(병합 전 종료, 원본 보존) | 🔄 규칙 + 비동기 OpenAI 분석·근거 대조, 보관·삭제 리뷰 중 |
 | W6 | 공격·장애·성능·재현 | ◧ 개발본 있음 — 동시성·재시작·백업 복원·보안(병합 전 종료, 원본 보존) | 🔄 신규 지갑 복구·독립 RPC 검증 리뷰 중 |
 | W7 | RC·시연·발표·인계 | □ 시작 전 | □ 시작 전 |
 
-- **기존 본선 개발**은 W1~W4가 단계 브랜치에 병합됐고, 이 저장소에 그대로 들어 있습니다.
-- 1·2차 멘토링 뒤 범위가 바뀌어(공동승인·기관 지갑 서명·문서 버전·AI 피싱 분석) 개발 계획을 5.1로 개정했습니다. 그 보완 작업(V5)은 W1~W6 PR 21건을 리뷰하고 있고, 아직 통합 브랜치에 병합되지 않았습니다.
-- 알려진 남은 결함: 여러 RPC 장애·재시작이 섞인 환경에서 검증이 INCONCLUSIVE로 끝나는 사례(G07)를 W6에서 원인 확인·재검사합니다.
+- **기존 본선 개발**의 W1~W4 구현·QA 커밋은 각 단계 브랜치에 있습니다. 단계 전체 완료나 `integration`·`main` 승격을 뜻하지 않습니다. W1은 최종 승인, W2는 전체 웹 검사, W3는 단계 승격, W4는 전체 브라우저 검사가 남았다고 각 QA 기록에 명시돼 있습니다. `main`은 카드 알림 MVP·웹 데모 기준입니다.
+- **비공개 원본에 관한 팀 제공 설명(이 사본에서 검증 불가):** 1·2차 멘토링 뒤 범위가 바뀌어(공동승인·기관 지갑 서명·문서 버전·AI 피싱 분석) 개발 계획을 5.1로 개정했습니다. 그 보완 작업(V5)은 W1~W6 PR 21건을 리뷰하고 있고, 아직 통합 브랜치에 병합되지 않았습니다.
+- **원본 설명이며 재현·근거 확인 불가:** 알려진 남은 결함: 여러 RPC 장애·재시작이 섞인 환경에서 검증이 INCONCLUSIVE로 끝나는 사례(G07)를 W6에서 원인 확인·재검사합니다.
 - Sepolia 테스트넷 배포는 아직 하지 않았습니다. 지금은 로컬 Anvil 체인에서 전체 스택을 실행합니다.
 
 ## 멘토링 기록
@@ -59,10 +59,12 @@
 | [`phase/W3`](../../tree/phase/W3) | 두 유형 발행·검증, 공식 웹 디자인 연결, 실제 API·브라우저 QA |
 | [`phase/W4`](../../tree/phase/W4) | 키 교체, Proof 폐기·상태·1회 사용(consume), 수명주기 QA |
 
-작업 브랜치 → `phase/Wn` → `integration` → `main` 순서로 병합하며, PR마다 실제로 실행한 검사·개인 기여·남은 항목을 기록합니다.
+원본의 작업 브랜치 → `phase/Wn` → `integration` → `main` 병합 정책을 소개합니다. 이 사본의 `phase/W1~W4`는 각각 별도 스냅샷이며 누적 포함을 보장하지 않습니다. 예를 들어 W1 최종 QA와 W3 공식 웹 작업은 W4 트리에 모두 포함돼 있지 않습니다. 원본에서는 PR마다 실제로 실행한 검사·개인 기여·남은 항목을 기록합니다.
 원본 저장소의 PR 목록과 리뷰는 사본에 옮겨지지 않아서 [3.2 개발·배포 이력](#32-개발배포-이력)에 정리했습니다.
 
 ---
+
+> 아래 1~2장의 V5 기획·멘토링 반영 내용은 팀 제공 설명입니다. 개발 계획서 5.1·ADR 0004 등 원문이 이 사본에 없어 내용과 구현 상태를 독립 확인하지 못했습니다. 현재 공개 코드·지침과 구분해서 읽어 주세요.
 
 ## 1. 멘토링 요청사항
 
@@ -140,53 +142,53 @@
 
 ## 3. 깃허브 프로젝트 진행 내역
 
-- **원본 저장소:** 2026. 9. 3. 생성 · PR 77건(병합 45, 리뷰 대기 21) · 기여자 4명 (비공개)
+- **팀 제공 원본 통계(이 사본에서 확인 불가):** 2026. 9. 3. 생성 · PR 77건(병합 45, 리뷰 대기 21) · 기여자 4명 (비공개)
 - **브랜치 전략:** 작업 브랜치 → `phase/Wn` → `integration` → `main`. PR마다 실제 실행한 검사·개인 기여·미완료 항목을 기록합니다.
 
 ### 3.1 아키텍처
 
 | 구성 요소(경로) | 기술 | 역할 |
 | --- | --- | --- |
-| 웹 [`apps/web`](apps/web) | Next.js · React | 사용자·발행기관·승인자 화면, 지갑 서명, 결과 보고서 |
-| API [`apps/api`](apps/api) | FastAPI · Python | 인증, 기관 신청·키·발행·검증 API, Operation 저장·복구 |
+| 웹 [`apps/web`](apps/web) | Next.js · React | main: 카드 알림 검증 데모. 단계 브랜치: 인증·기관·발행 화면(범위는 각 QA 기록 참조) |
+| API [`apps/api`](apps/api) | FastAPI · Python | main: 카드 알림 검증·Proof 저장. 단계 브랜치: 인증·기관·키·발행·Operation API |
 | 공통 모델 [`packages/python`](packages/python) | originproof_core | 서명·정규화·검증 엔진, 스키마·OpenAPI 생성 원본 |
-| 컨트랙트 [`packages/contracts`](packages/contracts) | Solidity · Foundry · Anvil | IssuerRegistry·키 레지스트리 → v5 통합 레지스트리(공동승인·문서 버전) |
-| 분석기 [`services/analyzer`](services/analyzer) | Python · OpenAI Responses API | 규칙 검사 + LLM 구조화 분석, 근거 대조, Mock provider |
+| 컨트랙트 [`packages/contracts`](packages/contracts) | Solidity · Foundry · Anvil | main: IssuerRegistry·IssuerKeyRegistry. 단계 브랜치: Proof 상태·consume 등. V5는 이 사본에 없음 |
+| 분석기 [`services/analyzer`](services/analyzer) | Python · OpenAI Responses API | 카드 알림 후보 필드 추출, OpenAI·Mock provider. 진위 판정은 검증 코어가 수행 |
 | 인덱서 [`services/indexer`](services/indexer) | Python | 온체인 이벤트 수집, DB 읽기용 사본 동기화 |
-| DB · 인프라 [`infra`](infra) | PostgreSQL · Docker Compose | 원본·서명·Operation 저장, 전체 스택 로컬 실행 |
+| DB · 인프라 [`infra`](infra) | PostgreSQL · Docker Compose | main: Proof 저장·MVP 스택 실행 구성. 단계 브랜치: Operation 저장·복구 |
 
-**흐름:** 사용자 입력 → 웹 → API → (AI 분석기 | 검증 엔진) → PostgreSQL 원본 + 블록체인 해시·상태 대조 → 네 축 결과 보고서
+**main의 흐름:** 합성 카드 알림 후보 입력 → 웹 → 검증 API → Signed Proof·서명·내용·Issuer/Key 상태 검사 → 판정·사유 표시. V5 네 축 보고서는 이 사본의 완료 기능이 아닙니다.
 
 ### 3.2 개발·배포 이력
 
 | 기간 | 주요 내용 | 관련 PR |
 | --- | --- | --- |
 | 9/4 ~ 9/8 | 저장소 기반 구축. IssuerRegistry·IssuerKeyRegistry 컨트랙트, 로컬 배포·ABI·ChainReader·인덱서, 검증 API·Proof 저장, 카드 알림 후보 추출, 컨테이너 기반 로컬 체인 배포, **재현 가능한 HTTP E2E 데모(make demo)** | #1 ~ #16 |
-| 9/28 ~ 9/30 | MVP를 main에 통합. 본선 웹 데모, 개발 계획서 v2.7~v3.0, 레거시 정리 | #17 ~ #25 |
-| 10/1 ~ 10/2 | 본선 W1~W4: 인증·기관 신청 API, 기관·키 API와 Operation 복구, 키 관리 화면, 두 유형 발행·검증, 키 교체, Proof 폐기·1회 사용, RPC 장애·Anvil 재시작 QA | #23 ~ #46 |
-| 10/6, 10/11 | 1·2차 멘토링 → 팀 회의 요약, 블록체인 결정 기록 | docs |
-| 10/13 ~ 10/14 | ADR 0004(공동승인·기관 지갑 서명·문서 버전), 공유 계약 v5, **개발 계획서 5.1**, nonce 예약 해제 수정, W3~W5 독립 QA | #47 ~ #56 |
-| 10/16 ~ 현재 | V5 구현 PR 21건 리뷰 중: 공동승인·키 증명·긴급 정지 컨트랙트, 기관 서명 발행·nonce·소유권, 문서 버전·원자적 대체·철회, 검증 API, 규칙 + 비동기 OpenAI 분석·근거 대조, 독립 QA | #57 ~ #77 |
+| 9/28 ~ 9/30 | MVP·웹 데모를 main에 통합. 후속 브랜치에 개발 계획서 v2.7~v3.0·레거시 정리 기록(main 계획서는 v2.1) | #17 ~ #25 |
+| 10/1 ~ 10/3 (후속 병합 10/15) | 본선 W1~W4: 인증·기관 신청 API, 기관·키 API와 Operation 복구, 키 관리 화면, 두 유형 발행·검증, 키 교체, Proof 폐기·1회 사용, RPC 장애·Anvil 재시작 QA | #23 ~ #46, 후속 #47·#49·#50 |
+| 10/6, 10/11 (팀 제공, 확인 불가) | 1·2차 멘토링 → 팀 회의 요약, 블록체인 결정 기록 | docs |
+| 10/13 ~ 10/14 (팀 제공, 확인 불가) | ADR 0004(공동승인·기관 지갑 서명·문서 버전), 공유 계약 v5, **개발 계획서 5.1**, nonce 예약 해제 수정, W3~W5 독립 QA | 원본 설명 #47 ~ #56; 사본의 #47·#49·#50 커밋은 위 후속 QA·nonce 수정 |
+| 10/16 ~ 현재 (팀 제공, 확인 불가) | V5 구현 PR 21건 리뷰 중: 공동승인·키 증명·긴급 정지 컨트랙트, 기관 서명 발행·nonce·소유권, 문서 버전·원자적 대체·철회, 검증 API, 규칙 + 비동기 OpenAI 분석·근거 대조, 독립 QA | #57 ~ #77 |
 
-**배포 현황:** Docker Compose + 로컬 Anvil 체인에서 전체 스택을 실행하고 있습니다(`make demo`). Sepolia 테스트넷 배포는 목표이며 아직 하지 않았습니다. CI(Quality Gate)는 구조 검사, 생성물 최신성, Python 테스트·린트, 웹 검사, Foundry 테스트를 실행합니다.
+**배포 안내:** Docker Compose + 로컬 Anvil 체인에서 MVP 스택을 실행하도록 구성돼 있습니다(`make demo`). Sepolia 테스트넷 배포는 목표이며 아직 하지 않았습니다. 이번 문서 점검에서 스택 실행·테스트넷 배포 여부를 재검증하지 않았습니다. CI(Quality Gate) 정의는 구조 검사, 생성물 최신성, Python 테스트·린트, 웹 검사, Foundry 테스트를 실행합니다.
 
-### 3.3 검증 결과 (본선 기획서 기준, 로컬 재현)
+### 3.3 과거 검증 결과 (이번 점검에서 테스트 재실행 안 함)
 
 | 레이어 | 시나리오 | 결과 |
 | --- | --- | --- |
-| Backend API | 정상·잘못된 입력 | 잘못된 입력 422 차단 (5 passed) |
-| Core 서명·검증 | 서명 위조·금액 변조 | TAMPERED + 정확한 사유 코드 (11 passed) |
-| Analyzer | 손상 이미지·API 오류 | 예외 없이 안전하게 거부 (97 passed) |
-| Smart Contract | 권한 없는 등록, 퍼징 512회 | 모든 시도 revert (10 passed) |
-| HTTP E2E | 정상·변조 요청 | VERIFIED + ACTIVE / TAMPERED + AMOUNT_MISMATCH |
+| Backend API | 정상·잘못된 입력 | 잘못된 입력 422 차단 (팀 제공 5 passed: 실행 기록 확인 불가) |
+| Core 서명·검증 | 서명 위조·금액 변조 | TAMPERED + 정확한 사유 코드 (팀 제공 11 passed: 실행 기록 확인 불가) |
+| Analyzer | 손상 이미지·API 오류 | 예외 없이 안전하게 거부 (팀 제공 97 passed: 실행 기록 확인 불가) |
+| Smart Contract | 권한 없는 등록, 퍼징 512회 | 계약 테스트 10 passed, fuzz 512회 기록 있음 ([M3 기록](docs/blockchain/M3_README.md)) |
+| HTTP E2E | 정상·변조 요청 | VERIFIED + ACTIVE / TAMPERED + AMOUNT_MISMATCH ([통합 완료 기록](docs/runbooks/mvp_integration_sequence.md)) |
 
-위 결과는 9월 MVP(카드 알림) 기준입니다. v5 기능은 PR별 검사 결과를 기록하고 있으며, 병합 후 통합 검증을 진행합니다.
+위 수치는 9월 MVP(카드 알림)에 관한 과거 주장·기록이며 현재 테스트 수나 이번 실행 결과가 아닙니다. v5의 PR별 검사·통합 상태는 이 사본에서 확인할 수 없습니다.
 
 ### 3.4 저장소 문서·참고자료
 
 이 사본(W1~W4)에 있는 문서:
 
-- [`docs/development_plan.md`](docs/development_plan.md): 통합 개발 계획서(이 사본은 v3.0 기준)
+- [`docs/development_plan.md`](docs/development_plan.md): 통합 개발 계획서(main은 v2.1, [phase/W4는 v3.0](../../tree/phase/W4/docs/development_plan.md))
 - [`docs/signing_spec.md`](docs/signing_spec.md): 서명 명세
 - [`docs/runbooks/`](docs/runbooks): 실행 절차
 - [`phase/W4`의 `docs/adr/`](../../tree/phase/W4/docs/adr): 기술 결정 기록(ADR 0001)
@@ -194,13 +196,15 @@
 - [`phase/W4`의 `docs/portfolio/`](../../tree/phase/W4/docs/portfolio): 주차·담당별 개인 기여 기록
 - [기존 개발 안내 README](docs/개발안내_README.md): 주차별 목표, 협업 규칙, 로컬 실행·검사 명령
 
-W4 이후(10/13~) 비공개 원본의 `integration` 브랜치에서 만든 문서는 이 사본에 없습니다. 멘토링 때 필요하면 첨부합니다.
+후속(10/13~) 비공개 원본의 `integration` 브랜치에서 만든 문서는 이 사본에 없습니다. 멘토링 때 필요하면 첨부합니다.
 
 - 통합 개발 계획서 5.1(범위·권한·7주 계획·수용 검사 V5-F01~21)
 - ADR 0002~0004(0004가 1·2차 멘토링 반영본)
 - `shared_contract_v5.md`(공유 계약), `ui_ux_design.md`(UI/UX 설계 1.1)
 
 참고: 경찰청 보이스피싱 통계, KISA 대응자료, NIST FIPS 186-5, EIP-712, Ethereum 오라클 문서, Certificate Transparency, W3C DID·VC
+
+공개 사본의 GitHub PR 목록은 비어 있습니다(2026. 10. 18. 조회). 위 PR 번호는 원본 기록 식별자이며 이 사본의 PR 링크가 아닙니다. 단계 문서의 비공개 원본 PR·리뷰 링크는 공개 열람이 보장되지 않습니다.
 
 ### 로컬 실행
 
