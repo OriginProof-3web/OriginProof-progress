@@ -1,7 +1,7 @@
 # OriginProof — 본선 개발 안내
 
-> **개발 계획서가 v2.0으로 업데이트되었습니다.**
-> 전원 [통합 개발 계획서](docs/development_plan.md)를 확인하고, 팀에서 공유한 최신 커밋을 받아 **각자의 로컬 저장소·작업 계획·개인 개발 지침에 반영해주세요.**
+> **개발 계획서가 v2.1으로 업데이트되었습니다.**
+> 전원 [통합 개발 계획서](development_plan.md)를 확인하고, 팀에서 공유한 최신 커밋을 받아 **각자의 로컬 저장소·작업 계획·개인 개발 지침에 반영해주세요.**
 > 로컬 미커밋 작업을 먼저 보존하고 변경 내용을 비교해주세요. 저장소 밖의 예전 계획서를 수정하지 말고 `docs/development_plan.md`를 기준으로 개발해주세요.
 
 OriginProof는 디지털 요청과 증빙의 **발행 주체, 내용 무결성, 현재 유효성**을 검증합니다.
@@ -38,7 +38,7 @@ OriginProof는 디지털 요청과 증빙의 **발행 주체, 내용 무결성, 
 
 ## 개발 시작 전과 협업
 
-1. [AGENTS.md](AGENTS.md), [시작 안내](START_HERE.md), 개발 계획서의 관련 범위, 담당 경로의 하위 지침을 읽어주세요.
+1. [AGENTS.md](../AGENTS.md), [시작 안내](../START_HERE.md), 개발 계획서의 관련 범위, 담당 경로의 하위 지침을 읽어주세요.
 2. 팀에서 합의한 최신 기준 브랜치와 커밋을 확인해주세요. 예전 MVP bootstrap 커밋에서 새 개발을 시작하지 않습니다.
 3. 이슈에 담당자·수용 기준·의존 인터페이스를 적고 `feature/<issue>-<name>` 또는 `fix/<issue>-<name>` 브랜치에서 작업해주세요.
 4. 본선 역할 배분은 W1에 확정합니다. 그 전에는 기존 M1~M4 소유 경로와 공유 계약 승인 규칙을 따르고, 다른 담당자 변경이 필요하면 handoff로 조율해주세요.
@@ -85,10 +85,10 @@ make demo
 
 ## 참고 문서
 
-- [개발 계획서](docs/development_plan.md): 최종 범위, 권한, 주차별 산출물과 완료 기준
-- [현재 서명 명세](docs/signing_spec.md): 서명·정규화·도메인 계약
-- [현재 MVP 검증 API](docs/api/mvp_verification.md): 기존 입력·응답
-- [현재 데모 실행 안내](docs/runbooks/mvp_demo.md): 실행·종료·초기화
-- [MVP 통합 기록](docs/runbooks/mvp_integration_sequence.md): 예선 개발 당시의 완료 기록
+- [개발 계획서](development_plan.md): 최종 범위, 권한, 주차별 산출물과 완료 기준
+- [현재 서명 명세](signing_spec.md): 서명·정규화·도메인 계약
+- [현재 MVP 검증 API](api/mvp_verification.md): 기존 입력·응답
+- [현재 데모 실행 안내](runbooks/mvp_demo.md): 실행·종료·초기화
+- [MVP 통합 기록](runbooks/mvp_integration_sequence.md): 예선 개발 당시의 완료 기록
 
 이전 루트 README는 Git 이력에 보존되어 있습니다. 이후 개발은 이 안내와 저장소 안의 최신 계획서를 기준으로 진행해주세요.
